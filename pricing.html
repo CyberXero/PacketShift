@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — PacketShift</title>
+<meta name="description" content="Residential proxies from $0.49/GB. Mobile from $1.20/GB. Static IPs from $0.80/mo. Pay as you go — no subscriptions, no expiry.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://packetshift.io/pricing.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --base:#070D1F;--s1:#0B1428;--s2:#0F1C38;--s3:#152240;
+  --border:#1C2E50;--border2:#243655;
+  --accent:#2563FF;--accent2:#1a4fd6;
+  --accentlo:rgba(37,99,255,0.10);
+  --text:#EDF2FC;--muted:#6B85B0;--dim:#35496E;
+  --green:#0FD98A;
+  --mono:'JetBrains Mono',monospace;
+  --head:'Space Grotesk',sans-serif;
+  --body:'Inter',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--base);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:200;background:rgba(7,13,31,0.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1240px;margin:0 auto;padding:0 28px;height:66px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--head);font-size:19px;font-weight:700;letter-spacing:-.4px;flex-shrink:0}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-size:14px;font-weight:500;color:var(--muted);transition:color .15s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:8px;font-family:var(--body);font-size:14px;font-weight:600;cursor:pointer;border:none;transition:all .15s;white-space:nowrap;line-height:1}
+.btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border2)}
+.btn-ghost:hover{color:var(--text);border-color:var(--dim)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-1px)}
+.btn-lg{padding:13px 26px;font-size:15px;border-radius:10px}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border2)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--muted);border-radius:2px}
+.mobile-menu{display:none;flex-direction:column;background:var(--s1);border-top:1px solid var(--border);padding:16px 28px 24px}
+.mobile-menu a{padding:12px 0;font-size:15px;font-weight:500;color:var(--muted);border-bottom:1px solid var(--border)}
+.mobile-menu a:last-child{border-bottom:none;color:var(--accent)}
+.mobile-menu.open{display:flex}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+section{padding:88px 0}
+.sec-label{font-family:var(--mono);font-size:10px;font-weight:600;color:var(--accent);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:14px}
+.sec-title{font-family:var(--head);font-size:clamp(28px,3.5vw,42px);font-weight:700;letter-spacing:-1.2px;line-height:1.1;margin-bottom:14px}
+.sec-sub{font-size:16px;color:var(--muted);max-width:520px;line-height:1.7;margin-bottom:60px}
+
+/* PAGE HERO */
+.page-hero{padding:72px 0 80px;position:relative;overflow:hidden;text-align:center}
+.page-hero-glow{position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(37,99,255,0.12) 0%,transparent 65%);pointer-events:none}
+.page-hero-inner{position:relative;z-index:1;max-width:680px;margin:0 auto}
+.page-hero h1{font-family:var(--head);font-size:clamp(38px,5vw,62px);font-weight:700;line-height:1.05;letter-spacing:-2.5px;margin-bottom:20px}
+.page-hero p{font-size:17px;color:var(--muted);line-height:1.7;max-width:480px;margin:0 auto 36px}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+/* PRICING CARDS */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px}
+.pricing-grid-2{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.price-card{background:var(--s1);border:1px solid var(--border);border-radius:14px;padding:32px 28px;transition:border-color .2s,background .2s;position:relative}
+.price-card:hover{border-color:var(--border2);background:var(--s2)}
+.price-card.featured{border-color:var(--accent);background:var(--s1)}
+.price-card.featured::before{content:'Most popular';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:10px;font-weight:700;letter-spacing:1.5px;padding:3px 14px;border-radius:0 0 8px 8px;font-family:var(--mono)}
+.pc-type-label{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.pc-type-icon{font-size:24px;margin-bottom:12px}
+.pc-type-name{font-family:var(--head);font-size:18px;font-weight:700;letter-spacing:-.3px;margin-bottom:6px}
+.pc-type-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:24px;min-height:48px}
+.pc-price-big{font-family:var(--head);font-size:38px;font-weight:700;letter-spacing:-1.5px;line-height:1;margin-bottom:4px}
+.pc-price-big span{font-size:16px;color:var(--muted);font-weight:400;letter-spacing:0}
+.pc-billing{font-size:12px;color:var(--dim);margin-bottom:28px}
+.pc-features{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:28px}
+.pc-features li{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.pc-features li::before{content:'✓';color:var(--green);font-size:12px;flex-shrink:0;font-weight:700}
+.pc-cta-full{display:block;text-align:center;padding:11px;border-radius:8px;font-weight:600;font-size:14px;border:1px solid var(--border2);color:var(--muted);transition:all .15s}
+.pc-cta-full:hover{border-color:var(--accent);color:var(--accent)}
+.price-card.featured .pc-cta-full{background:var(--accent);border-color:var(--accent);color:#fff}
+.price-card.featured .pc-cta-full:hover{background:var(--accent2)}
+
+/* CALCULATOR */
+.calc-wrap{background:var(--s1);border:1px solid var(--border);border-radius:16px;padding:48px}
+.calc-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.calc-left h3{font-family:var(--head);font-size:24px;font-weight:700;letter-spacing:-.5px;margin-bottom:8px}
+.calc-left p{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:32px}
+.calc-field{margin-bottom:20px}
+.calc-field label{display:block;font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.5px;margin-bottom:8px;font-family:var(--mono)}
+.calc-select,.calc-input{width:100%;background:var(--s2);border:1px solid var(--border);border-radius:8px;padding:11px 14px;font-family:var(--body);font-size:14px;color:var(--text);outline:none;transition:border-color .15s;appearance:none}
+.calc-select:focus,.calc-input:focus{border-color:var(--accent)}
+.calc-select option{background:var(--s2)}
+.calc-input{font-family:var(--mono)}
+.calc-result{background:var(--s2);border:1px solid var(--border);border-radius:12px;padding:32px;text-align:center}
+.calc-result-label{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.calc-result-price{font-family:var(--head);font-size:52px;font-weight:700;letter-spacing:-2px;line-height:1;color:var(--accent);margin-bottom:4px}
+.calc-result-sub{font-size:13px;color:var(--muted);margin-bottom:28px}
+.calc-result-breakdown{text-align:left;border-top:1px solid var(--border);padding-top:20px;display:flex;flex-direction:column;gap:10px}
+.calc-breakdown-row{display:flex;justify-content:space-between;font-size:13px}
+.calc-breakdown-row span:first-child{color:var(--muted)}
+.calc-breakdown-row span:last-child{font-family:var(--mono);font-weight:600;color:var(--text)}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.faq-item{background:var(--s1)}
+.faq-btn{width:100%;background:none;border:none;padding:22px 28px;text-align:left;font-family:var(--head);font-size:15px;font-weight:600;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:background .15s}
+.faq-btn:hover{background:var(--s2)}
+.faq-btn.open{background:var(--s2);color:var(--accent)}
+.faq-icon{font-family:var(--mono);font-size:18px;color:var(--dim);transition:transform .2s;flex-shrink:0}
+.faq-btn.open .faq-icon{transform:rotate(45deg);color:var(--accent)}
+.faq-body{display:none;padding:0 28px 22px;font-size:14px;color:var(--muted);line-height:1.75}
+.faq-body.open{display:block}
+
+/* CTA & FOOTER */
+.cta-block{background:var(--s1);border:1px solid var(--border);border-radius:20px;padding:72px 48px;text-align:center;position:relative;overflow:hidden}
+.cta-block::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(37,99,255,.09) 0%,transparent 65%);pointer-events:none}
+.cta-block h2{font-family:var(--head);font-size:clamp(28px,4vw,44px);font-weight:700;letter-spacing:-1.2px;margin-bottom:16px;position:relative}
+.cta-block p{font-size:16px;color:var(--muted);max-width:460px;margin:0 auto 36px;line-height:1.7;position:relative}
+.cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
+footer{background:var(--s1);border-top:1px solid var(--border);padding:60px 0 32px}
+.foot-grid{display:grid;grid-template-columns:200px repeat(3,1fr);gap:48px;margin-bottom:48px}
+.foot-brand p{font-size:13px;color:var(--muted);line-height:1.65;max-width:170px;margin-top:12px}
+.foot-col h4{font-family:var(--head);font-size:13px;font-weight:700;margin-bottom:16px;letter-spacing:-.2px}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-col ul li a{font-size:13px;color:var(--muted);transition:color .15s}
+.foot-col ul li a:hover{color:var(--text)}
+.foot-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.foot-bottom p{font-size:12px;color:var(--dim)}
+.pay-row{display:flex;gap:8px}
+.pay-pill{background:var(--s2);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--muted);font-family:var(--mono)}
+
+@media(max-width:900px){
+  .pricing-grid,.pricing-grid-2{grid-template-columns:1fr 1fr}
+  .calc-inner{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  section{padding:60px 0}
+  .nav-links,.nav-right{display:none}
+  .hamburger{display:flex}
+  .pricing-grid,.pricing-grid-2{grid-template-columns:1fr}
+  .cta-block{padding:44px 24px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .foot-brand{grid-column:span 2}
+}
+@media(prefers-reduced-motion:reduce){.btn-primary:hover{transform:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="ps-logo" viewBox="0 0 32 32">
+      <rect x="2" y="6" width="20" height="20" fill="#2563FF"/>
+      <polygon points="17,6 22,6 22,11" fill="#070D1F" opacity="0.75"/>
+      <polygon points="2,21 7,26 2,26" fill="#070D1F" opacity="0.75"/>
+      <rect x="10" y="2" width="20" height="20" fill="none" stroke="#2563FF" stroke-width="2"/>
+    </symbol>
+  </defs>
+</svg>
+<nav>
+  <div class="nav-inner">
+    <a href="/index.html" class="logo"><svg width="32" height="32" aria-hidden="true"><use href="#ps-logo"/></svg>PacketShift</a>
+    <ul class="nav-links">
+      <li><a href="/proxies.html">Proxies</a></li>
+      <li><a href="/pricing.html" class="active">Pricing</a></li>
+      <li><a href="/use-cases.html">Use Cases</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/login.html" class="btn btn-ghost">Log in</a>
+      <a href="/pricing.html" class="btn btn-primary">Get started</a>
+    </div>
+    <button class="hamburger" onclick="document.getElementById('mm').classList.toggle('open')" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mm">
+    <a href="/proxies.html">Proxies</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/use-cases.html">Use Cases</a>
+    <a href="/login.html">Log in</a>
+    <a href="/pricing.html">Get started →</a>
+  </div>
+</nav>
+
+<main>
+<section class="page-hero">
+  <div class="page-hero-glow"></div>
+  <div class="wrap">
+    <div class="page-hero-inner">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:var(--accentlo);border:1px solid rgba(37,99,255,0.25);border-radius:100px;padding:5px 16px 5px 12px;font-size:12px;font-weight:600;color:#7AABFF;letter-spacing:.3px;margin-bottom:28px"><span style="width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2.4s infinite;display:inline-block"></span>Pay as you go. No subscriptions.</div>
+      <h1>Simple pricing.<br>No surprises.</h1>
+      <p>Load balance, use traffic, top up when it runs low. Balance never expires. No commitments.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ROTATING PROXIES -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-label">Rotating proxies</div>
+    <h2 class="sec-title">Billed per GB of traffic</h2>
+    <p class="sec-sub">Pay only for what you use. Unused balance rolls forward with no expiry date.</p>
+    <div class="pricing-grid">
+      <div class="price-card featured">
+        <div class="pc-type-icon">🏠</div>
+        <div class="pc-type-name">Residential</div>
+        <div class="pc-type-desc">Real home ISP IPs. Highest trust score, hardest to detect.</div>
+        <div class="pc-price-big">$0.49<span>/GB</span></div>
+        <div class="pc-billing">Pay as you go · no expiry</div>
+        <ul class="pc-features">
+          <li>50M+ IP pool</li>
+          <li>HTTP(S) + SOCKS5</li>
+          <li>Rotating + sticky sessions</li>
+          <li>City, ZIP + ASN targeting</li>
+          <li>150+ countries</li>
+          <li>User/pass or IP whitelist</li>
+        </ul>
+        <a href="#" class="pc-cta-full">Get started</a>
+      </div>
+      <div class="price-card">
+        <div class="pc-type-icon">📱</div>
+        <div class="pc-type-name">Mobile 4G/5G</div>
+        <div class="pc-type-desc">Carrier IPs. Near-impossible to block without collateral damage.</div>
+        <div class="pc-price-big">$1.20<span>/GB</span></div>
+        <div class="pc-billing">Pay as you go · no expiry</div>
+        <ul class="pc-features">
+          <li>4G and 5G networks</li>
+          <li>HTTP(S) + SOCKS5</li>
+          <li>Rotating sessions</li>
+          <li>Carrier + country targeting</li>
+          <li>150+ countries</li>
+          <li>User/pass or IP whitelist</li>
+        </ul>
+        <a href="#" class="pc-cta-full">Get started</a>
+      </div>
+      <div class="price-card">
+        <div class="pc-type-icon">⚡</div>
+        <div class="pc-type-name">Datacenter</div>
+        <div class="pc-type-desc">Server IPs. Fastest throughput, lowest cost per GB.</div>
+        <div class="pc-price-big">$0.39<span>/GB</span></div>
+        <div class="pc-billing">Pay as you go · no expiry</div>
+        <ul class="pc-features">
+          <li>Highest throughput</li>
+          <li>HTTP(S)</li>
+          <li>Rotating sessions</li>
+          <li>Country targeting</li>
+          <li>150+ countries</li>
+          <li>User/pass or IP whitelist</li>
+        </ul>
+        <a href="#" class="pc-cta-full">Get started</a>
+      </div>
+    </div>
+
+    <!-- STATIC + SCRAPING API -->
+    <div style="margin-top:48px">
+      <div class="sec-label">Static &amp; managed</div>
+      <h2 class="sec-title">Billed per IP or per request</h2>
+      <p class="sec-sub">Fixed identity or fully managed scraping — different billing model, same balance.</p>
+    </div>
+    <div class="pricing-grid-2">
+      <div class="price-card">
+        <div class="pc-type-icon">🔒</div>
+        <div class="pc-type-name">Static Datacenter</div>
+        <div class="pc-type-desc">Dedicated server IP, yours for a month. No rotation.</div>
+        <div class="pc-price-big">$0.80<span>/IP/mo</span></div>
+        <div class="pc-billing">Per IP per month · shared balance</div>
+        <ul class="pc-features">
+          <li>Dedicated IP, no sharing</li>
+          <li>HTTP(S)</li>
+          <li>Static — no rotation</li>
+          <li>Whitelist-ready</li>
+          <li>User/pass or IP whitelist</li>
+        </ul>
+        <a href="#" class="pc-cta-full">Get started</a>
+      </div>
+      <div class="price-card">
+        <div class="pc-type-icon">🏢</div>
+        <div class="pc-type-name">Static ISP</div>
+        <div class="pc-type-desc">Residential provider IP, no rotation. Highest-trust static option.</div>
+        <div class="pc-price-big">$1.80<span>/IP/mo</span></div>
+        <div class="pc-billing">Per IP per month · shared balance</div>
+        <ul class="pc-features">
+          <li>Residential trust level</li>
+          <li>HTTP(S)</li>
+          <li>Static — no rotation</li>
+          <li>Persistent identity</li>
+          <li>User/pass or IP whitelist</li>
+        </ul>
+        <a href="#" class="pc-cta-full">Get started</a>
+      </div>
+      <div class="price-card">
+        <div class="pc-type-icon">🕷️</div>
+        <div class="pc-type-name">Scraping API</div>
+        <div class="pc-type-desc">Send URL, get clean HTML or JSON. CAPTCHAs handled automatically.</div>
+        <div class="pc-price-big">$1.40<span>/1K req</span></div>
+        <div class="pc-billing">Per 1,000 requests · shared balance</div>
+        <ul class="pc-features">
+          <li>JS rendering included</li>
+          <li>CAPTCHA auto-handled</li>
+          <li>HTML or JSON output</li>
+          <li>REST API</li>
+          <li>No proxy management needed</li>
+        </ul>
+        <a href="#" class="pc-cta-full">Get started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calc" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-label">Estimate</div>
+    <h2 class="sec-title">Calculate your cost</h2>
+    <p class="sec-sub">Pick a proxy type and volume. See the total before you commit to anything.</p>
+    <div class="calc-wrap">
+      <div class="calc-inner">
+        <div class="calc-left">
+          <h3>Cost estimator</h3>
+          <p>Adjust the type and volume. All pricing is pay-as-you-go — no subscriptions, no monthly minimums.</p>
+          <div class="calc-field">
+            <label>Proxy type</label>
+            <select class="calc-select" id="calcType" onchange="calcUpdate()">
+              <option value="res">Residential — $0.49/GB</option>
+              <option value="mob">Mobile 4G/5G — $1.20/GB</option>
+              <option value="dc">Datacenter — $0.39/GB</option>
+              <option value="sdc">Static Datacenter — $0.80/IP/mo</option>
+              <option value="sisp">Static ISP — $1.80/IP/mo</option>
+              <option value="api">Scraping API — $1.40/1K req</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label id="calcVolumeLabel">Volume (GB)</label>
+            <input class="calc-input" type="number" id="calcVolume" value="100" min="1" oninput="calcUpdate()" placeholder="100">
+          </div>
+        </div>
+        <div class="calc-result">
+          <div class="calc-result-label">Estimated total</div>
+          <div class="calc-result-price" id="calcTotal">$49.00</div>
+          <div class="calc-result-sub" id="calcSubline">100 GB · Residential · $0.49/GB</div>
+          <div style="margin-bottom:24px"><a href="#" class="btn btn-primary" style="width:100%;justify-content:center">Load balance and start</a></div>
+          <div class="calc-result-breakdown">
+            <div class="calc-breakdown-row"><span>Balance never expires</span><span style="color:var(--green)">✓</span></div>
+            <div class="calc-breakdown-row"><span>No subscription required</span><span style="color:var(--green)">✓</span></div>
+            <div class="calc-breakdown-row"><span>Minimum deposit</span><span>$5.00</span></div>
+            <div class="calc-breakdown-row"><span>Crypto accepted</span><span style="color:var(--green)">✓</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-label">FAQ</div>
+    <h2 class="sec-title">Common questions</h2>
+    <p class="sec-sub">The ones that come up before every first purchase.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faqToggle(this)">Does my balance expire?<span class="faq-icon">+</span></button>
+        <div class="faq-body">No. Balance never expires. Buy in bulk, burn it over months — there's no monthly write-off and no silent expiry date. What you load is what you have until you use it.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faqToggle(this)">What's the minimum deposit?<span class="faq-icon">+</span></button>
+        <div class="faq-body">$5. That's enough to test any proxy type and validate your use case before committing to volume.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faqToggle(this)">Can I use one balance across all proxy types?<span class="faq-icon">+</span></button>
+        <div class="faq-body">Yes. Your balance is shared across all six proxy types — residential, mobile, datacenter, static datacenter, static ISP, and scraping API. You don't need separate accounts or separate top-ups per type.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faqToggle(this)">What payment methods are accepted?<span class="faq-icon">+</span></button>
+        <div class="faq-body">Visa, Mastercard, and crypto — BTC, ETH, USDT, and TON. Crypto deposits credit instantly. No card required if you pay with crypto.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faqToggle(this)">How is traffic measured for rotating proxies?<span class="faq-icon">+</span></button>
+        <div class="faq-body">Outbound and inbound data combined, measured per request. You're billed only for traffic that passes through the proxy — connection overhead is not counted.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faqToggle(this)">How does static IP billing work?<span class="faq-icon">+</span></button>
+        <div class="faq-body">Static Datacenter and Static ISP IPs are billed per IP per month, deducted from your balance. You pick the number of IPs you need, and they're reserved for you for 30 days. No traffic meter — use as much bandwidth as your session requires.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faqToggle(this)">Is there a subscription or commitment?<span class="faq-icon">+</span></button>
+        <div class="faq-body">No subscription. No auto-renewal. No commitment. Load balance, use traffic, top up when it runs low. Nothing happens to your account if you don't use it for a month.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faqToggle(this)">Can I get a refund for unused balance?<span class="faq-icon">+</span></button>
+        <div class="faq-body">Contact support. Refund eligibility is assessed case by case. Because balance never expires and the minimum deposit is $5, most users prefer to keep balance in account rather than withdraw.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faqToggle(this)">Do you offer volume discounts?<span class="faq-icon">+</span></button>
+        <div class="faq-body">Contact support for enterprise volume pricing. For standard usage, the rates shown are the rates you pay — no hidden fees, no setup costs, no port charges.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-block">
+      <h2>Load $5 and run your first request.</h2>
+      <p>No approval process. No sales call. Dashboard access is instant after signup.</p>
+      <div class="cta-actions">
+        <a href="#" class="btn btn-primary btn-lg">Create account</a>
+        <a href="/proxies.html" class="btn btn-outline btn-lg">View proxy types</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="/index.html" class="logo"><svg width="28" height="28" aria-hidden="true"><use href="#ps-logo"/></svg>PacketShift</a>
+        <p>Residential, mobile and datacenter proxies. 150+ countries. Pay per GB.</p>
+      </div>
+      <div class="foot-col"><h4>Proxies</h4><ul><li><a href="/proxies.html#residential">Residential</a></li><li><a href="/proxies.html#mobile">Mobile 4G/5G</a></li><li><a href="/proxies.html#datacenter">Datacenter</a></li><li><a href="/proxies.html#static-isp">Static ISP</a></li><li><a href="/proxies.html#scraping-api">Scraping API</a></li></ul></div>
+      <div class="foot-col"><h4>Use cases</h4><ul><li><a href="/use-cases.html">Web scraping</a></li><li><a href="/use-cases.html">Social media</a></li><li><a href="/use-cases.html">SEO monitoring</a></li><li><a href="/use-cases.html">Price tracking</a></li><li><a href="/use-cases.html">Multi-accounting</a></li></ul></div>
+      <div class="foot-col"><h4>Company</h4><ul><li><a href="/pricing.html">Pricing</a></li><li><a href="#">Terms of service</a></li><li><a href="#">Privacy policy</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2026 PacketShift. All rights reserved.</p>
+      <div class="pay-row"><span class="pay-pill">Visa</span><span class="pay-pill">Mastercard</span><span class="pay-pill">BTC</span><span class="pay-pill">ETH</span><span class="pay-pill">USDT</span></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const RATES={res:{label:'Residential',rate:0.49,unit:'GB'},mob:{label:'Mobile 4G/5G',rate:1.20,unit:'GB'},dc:{label:'Datacenter',rate:0.39,unit:'GB'},sdc:{label:'Static Datacenter',rate:0.80,unit:'IP/mo'},sisp:{label:'Static ISP',rate:1.80,unit:'IP/mo'},api:{label:'Scraping API',rate:1.40,unit:'1K req'}};
+function calcUpdate(){
+  const t=document.getElementById('calcType').value;
+  const v=parseFloat(document.getElementById('calcVolume').value)||0;
+  const r=RATES[t];
+  document.getElementById('calcVolumeLabel').textContent='Volume ('+r.unit+')';
+  const total=(v*r.rate).toFixed(2);
+  document.getElementById('calcTotal').textContent='$'+total;
+  document.getElementById('calcSubline').textContent=v+' '+r.unit+' · '+r.label+' · $'+r.rate+'/'+r.unit;
+}
+function faqToggle(btn){
+  const body=btn.nextElementSibling;
+  const isOpen=btn.classList.contains('open');
+  document.querySelectorAll('.faq-btn').forEach(b=>{b.classList.remove('open');b.nextElementSibling.classList.remove('open')});
+  if(!isOpen){btn.classList.add('open');body.classList.add('open')}
+}
+function toggleMenu(){document.getElementById('mm').classList.toggle('open')}
+</script>
+</body>
+</html>

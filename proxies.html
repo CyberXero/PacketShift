@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proxy Types — PacketShift</title>
+<meta name="description" content="Residential, mobile, datacenter, static ISP and scraping API proxies. Six network types, one balance, 150+ countries. HTTP(S) and SOCKS5.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://packetshift.io/proxies.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --base:#070D1F;--s1:#0B1428;--s2:#0F1C38;--s3:#152240;
+  --border:#1C2E50;--border2:#243655;
+  --accent:#2563FF;--accent2:#1a4fd6;
+  --accentlo:rgba(37,99,255,0.10);
+  --text:#EDF2FC;--muted:#6B85B0;--dim:#35496E;
+  --green:#0FD98A;
+  --mono:'JetBrains Mono',monospace;
+  --head:'Space Grotesk',sans-serif;
+  --body:'Inter',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--base);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:200;background:rgba(7,13,31,0.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1240px;margin:0 auto;padding:0 28px;height:66px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--head);font-size:19px;font-weight:700;letter-spacing:-.4px;flex-shrink:0}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-size:14px;font-weight:500;color:var(--muted);transition:color .15s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:8px;font-family:var(--body);font-size:14px;font-weight:600;cursor:pointer;border:none;transition:all .15s;white-space:nowrap;line-height:1}
+.btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border2)}
+.btn-ghost:hover{color:var(--text);border-color:var(--dim)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-1px)}
+.btn-lg{padding:13px 26px;font-size:15px;border-radius:10px}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border2)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--muted);border-radius:2px}
+.mobile-menu{display:none;flex-direction:column;background:var(--s1);border-top:1px solid var(--border);padding:16px 28px 24px}
+.mobile-menu a{padding:12px 0;font-size:15px;font-weight:500;color:var(--muted);border-bottom:1px solid var(--border)}
+.mobile-menu a:last-child{border-bottom:none;color:var(--accent)}
+.mobile-menu.open{display:flex}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+section{padding:88px 0}
+.sec-label{font-family:var(--mono);font-size:10px;font-weight:600;color:var(--accent);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:14px}
+.sec-title{font-family:var(--head);font-size:clamp(28px,3.5vw,42px);font-weight:700;letter-spacing:-1.2px;line-height:1.1;margin-bottom:14px}
+.sec-sub{font-size:16px;color:var(--muted);max-width:520px;line-height:1.7;margin-bottom:60px}
+.btn-primary:hover{background:var(--accent2)}
+
+/* PAGE HERO */
+.page-hero{padding:72px 0 80px;position:relative;overflow:hidden;text-align:center}
+.page-hero-glow{position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(37,99,255,0.12) 0%,transparent 65%);pointer-events:none}
+.page-hero-inner{position:relative;z-index:1;max-width:680px;margin:0 auto}
+.page-hero h1{font-family:var(--head);font-size:clamp(38px,5vw,62px);font-weight:700;line-height:1.05;letter-spacing:-2.5px;margin-bottom:20px}
+.page-hero p{font-size:17px;color:var(--muted);line-height:1.7;max-width:480px;margin:0 auto 36px}
+
+/* PROXY DETAIL CARDS */
+.proxy-cards{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.proxy-card{background:var(--s1);display:grid;grid-template-columns:1fr 1fr;gap:0;transition:background .15s}
+.proxy-card:hover{background:var(--s2)}
+.proxy-card-left{padding:40px;border-right:1px solid var(--border)}
+.proxy-card-right{padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-content:start}
+.pc-header{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.pc-icon{width:44px;height:44px;border-radius:11px;background:var(--accentlo);border:1px solid rgba(37,99,255,.2);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.pc-name{font-family:var(--head);font-size:20px;font-weight:700;letter-spacing:-.4px;margin-bottom:3px}
+.pc-price-inline{font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:600}
+.pc-desc{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:24px}
+.pc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:28px}
+.tag{background:var(--s2);border:1px solid var(--border);border-radius:5px;padding:3px 9px;font-size:11px;color:var(--muted);font-family:var(--mono)}
+.pc-cta{display:flex;gap:10px;flex-wrap:wrap}
+.pc-stat{background:var(--s2);border:1px solid var(--border);border-radius:10px;padding:18px 20px}
+.pc-stat-label{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
+.pc-stat-val{font-family:var(--head);font-size:18px;font-weight:700;letter-spacing:-.5px;color:var(--text)}
+.pc-stat-val em{color:var(--accent);font-style:normal;font-size:14px}
+.badge-popular{background:var(--accent);color:#fff;font-size:9px;font-weight:700;letter-spacing:1px;padding:2px 7px;border-radius:4px;font-family:var(--mono);vertical-align:middle;margin-left:8px}
+
+/* COMPARE TABLE */
+.compare-wrap{border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-top:0}
+.ctable{width:100%;border-collapse:collapse}
+.ctable thead tr{background:var(--s2)}
+.ctable th{padding:14px 20px;text-align:left;font-family:var(--mono);font-size:10px;font-weight:600;color:var(--dim);letter-spacing:2px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.ctable tbody tr{border-bottom:1px solid var(--border);transition:background .15s}
+.ctable tbody tr:last-child{border-bottom:none}
+.ctable tbody tr:hover{background:var(--s1)}
+.ctable td{padding:16px 20px;font-size:13px;color:var(--muted);vertical-align:middle}
+.ctable td:first-child{font-family:var(--head);font-size:14px;font-weight:600;color:var(--text)}
+.ctable td .price{font-family:var(--mono);color:var(--accent);font-weight:700;font-size:14px}
+.check{color:var(--green);font-size:15px}
+.dash{color:var(--dim)}
+
+/* CTA */
+.cta-block{background:var(--s1);border:1px solid var(--border);border-radius:20px;padding:72px 48px;text-align:center;position:relative;overflow:hidden}
+.cta-block::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(37,99,255,.09) 0%,transparent 65%);pointer-events:none}
+.cta-block h2{font-family:var(--head);font-size:clamp(28px,4vw,44px);font-weight:700;letter-spacing:-1.2px;margin-bottom:16px;position:relative}
+.cta-block p{font-size:16px;color:var(--muted);max-width:460px;margin:0 auto 36px;line-height:1.7;position:relative}
+.cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
+
+/* FOOTER */
+footer{background:var(--s1);border-top:1px solid var(--border);padding:60px 0 32px}
+.foot-grid{display:grid;grid-template-columns:200px repeat(3,1fr);gap:48px;margin-bottom:48px}
+.foot-brand p{font-size:13px;color:var(--muted);line-height:1.65;max-width:170px;margin-top:12px}
+.foot-col h4{font-family:var(--head);font-size:13px;font-weight:700;margin-bottom:16px;letter-spacing:-.2px}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-col ul li a{font-size:13px;color:var(--muted);transition:color .15s}
+.foot-col ul li a:hover{color:var(--text)}
+.foot-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.foot-bottom p{font-size:12px;color:var(--dim)}
+.pay-row{display:flex;gap:8px}
+.pay-pill{background:var(--s2);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--muted);font-family:var(--mono)}
+
+@media(max-width:900px){
+  .proxy-card{grid-template-columns:1fr}
+  .proxy-card-left{border-right:none;border-bottom:1px solid var(--border)}
+  .proxy-card-right{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  section{padding:60px 0}
+  .nav-links,.nav-right{display:none}
+  .hamburger{display:flex}
+  .cta-block{padding:44px 24px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .foot-brand{grid-column:span 2}
+  .ctable th:nth-child(4),.ctable td:nth-child(4),
+  .ctable th:nth-child(5),.ctable td:nth-child(5){display:none}
+}
+@media(prefers-reduced-motion:reduce){.btn-primary:hover{transform:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="ps-logo" viewBox="0 0 32 32">
+      <rect x="2" y="6" width="20" height="20" fill="#2563FF"/>
+      <polygon points="17,6 22,6 22,11" fill="#070D1F" opacity="0.75"/>
+      <polygon points="2,21 7,26 2,26" fill="#070D1F" opacity="0.75"/>
+      <rect x="10" y="2" width="20" height="20" fill="none" stroke="#2563FF" stroke-width="2"/>
+    </symbol>
+  </defs>
+</svg>
+<nav>
+  <div class="nav-inner">
+    <a href="/index.html" class="logo"><svg width="32" height="32" aria-hidden="true"><use href="#ps-logo"/></svg>PacketShift</a>
+    <ul class="nav-links">
+      <li><a href="/proxies.html" class="active">Proxies</a></li>
+      <li><a href="/pricing.html">Pricing</a></li>
+      <li><a href="/use-cases.html">Use Cases</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/login.html" class="btn btn-ghost">Log in</a>
+      <a href="/pricing.html" class="btn btn-primary">Get started</a>
+    </div>
+    <button class="hamburger" onclick="document.getElementById('mm').classList.toggle('open')" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mm">
+    <a href="/proxies.html">Proxies</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/use-cases.html">Use Cases</a>
+    <a href="/login.html">Log in</a>
+    <a href="/pricing.html">Get started →</a>
+  </div>
+</nav>
+
+<main>
+<section class="page-hero">
+  <div class="page-hero-glow"></div>
+  <div class="wrap">
+    <div class="page-hero-inner">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:var(--accentlo);border:1px solid rgba(37,99,255,0.25);border-radius:100px;padding:5px 16px 5px 12px;font-size:12px;font-weight:600;color:#7AABFF;letter-spacing:.3px;margin-bottom:28px"><span style="width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2.4s infinite;display:inline-block"></span>Six network types. One balance.</div>
+      <h1>The right IP<br>for every job.</h1>
+      <p>Residential to scraping API. Each type built for a different surface — same dashboard, same balance, zero lock-in.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="/pricing.html" class="btn btn-primary btn-lg">Start for $5</a>
+        <a href="#compare" class="btn btn-outline btn-lg">Compare all types</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}</style>
+
+<!-- PROXY DETAIL CARDS -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-label">Network types</div>
+    <h2 class="sec-title">Six types. Pick what fits.</h2>
+    <p class="sec-sub">Your balance works across all of them. Switch types any time — no re-topping, no separate accounts.</p>
+
+    <div class="proxy-cards">
+
+      <!-- RESIDENTIAL -->
+      <div class="proxy-card" id="residential">
+        <div class="proxy-card-left">
+          <div class="pc-header">
+            <div class="pc-icon">🏠</div>
+            <div>
+              <div class="pc-name">Residential <span class="badge-popular">POPULAR</span></div>
+              <div class="pc-price-inline">$0.49 / GB</div>
+            </div>
+          </div>
+          <p class="pc-desc">Real home ISP IPs sourced from residential devices. Highest trust score of any proxy type — detection systems treat them as genuine users. The right choice when you're hitting targets that actively fingerprint and block.</p>
+          <div class="pc-tags">
+            <span class="tag">HTTP(S)</span><span class="tag">SOCKS5</span><span class="tag">Rotating</span><span class="tag">Sticky</span><span class="tag">City targeting</span><span class="tag">ASN targeting</span><span class="tag">ZIP targeting</span>
+          </div>
+          <div class="pc-cta">
+            <a href="/pricing.html" class="btn btn-primary">Buy residential →</a>
+          </div>
+        </div>
+        <div class="proxy-card-right">
+          <div class="pc-stat"><div class="pc-stat-label">Pool size</div><div class="pc-stat-val">50M<em>+</em> IPs</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Starting at</div><div class="pc-stat-val">$0.49<em>/GB</em></div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Protocols</div><div class="pc-stat-val">HTTP(S) + SOCKS5</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Session</div><div class="pc-stat-val">Rotate or sticky</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Auth</div><div class="pc-stat-val">User/pass · Whitelist</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Best for</div><div class="pc-stat-val">Scraping · SEO · Social</div></div>
+        </div>
+      </div>
+
+      <!-- MOBILE -->
+      <div class="proxy-card" id="mobile">
+        <div class="proxy-card-left">
+          <div class="pc-header">
+            <div class="pc-icon">📱</div>
+            <div>
+              <div class="pc-name">Mobile 4G/5G</div>
+              <div class="pc-price-inline">$1.20 / GB</div>
+            </div>
+          </div>
+          <p class="pc-desc">Carrier-assigned IPs from real mobile devices on 4G and 5G networks. Blocking a mobile IP means blocking every user on that carrier subnet — almost no target is willing to do it. The highest-trust rotating option for social platforms and account-sensitive work.</p>
+          <div class="pc-tags">
+            <span class="tag">HTTP(S)</span><span class="tag">SOCKS5</span><span class="tag">4G/5G</span><span class="tag">Rotating</span><span class="tag">Carrier targeting</span><span class="tag">Country targeting</span>
+          </div>
+          <div class="pc-cta">
+            <a href="/pricing.html" class="btn btn-primary">Buy mobile →</a>
+          </div>
+        </div>
+        <div class="proxy-card-right">
+          <div class="pc-stat"><div class="pc-stat-label">Network</div><div class="pc-stat-val">4G / 5G</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Starting at</div><div class="pc-stat-val">$1.20<em>/GB</em></div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Protocols</div><div class="pc-stat-val">HTTP(S) + SOCKS5</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Session</div><div class="pc-stat-val">Rotating</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Auth</div><div class="pc-stat-val">User/pass · Whitelist</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Best for</div><div class="pc-stat-val">Social · Arbitrage · Accounts</div></div>
+        </div>
+      </div>
+
+      <!-- DATACENTER -->
+      <div class="proxy-card" id="datacenter">
+        <div class="proxy-card-left">
+          <div class="pc-header">
+            <div class="pc-icon">⚡</div>
+            <div>
+              <div class="pc-name">Datacenter</div>
+              <div class="pc-price-inline">$0.39 / GB</div>
+            </div>
+          </div>
+          <p class="pc-desc">Server IPs with the highest throughput in the network. Easiest to detect as non-residential — but detection only matters if the target checks. For bulk data collection, internal tooling, or anything where speed and cost per GB is the constraint, nothing else touches it.</p>
+          <div class="pc-tags">
+            <span class="tag">HTTP(S)</span><span class="tag">High speed</span><span class="tag">Bulk</span><span class="tag">Rotating</span><span class="tag">Country targeting</span>
+          </div>
+          <div class="pc-cta">
+            <a href="/pricing.html" class="btn btn-primary">Buy datacenter →</a>
+          </div>
+        </div>
+        <div class="proxy-card-right">
+          <div class="pc-stat"><div class="pc-stat-label">Speed</div><div class="pc-stat-val">Highest</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Starting at</div><div class="pc-stat-val">$0.39<em>/GB</em></div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Protocols</div><div class="pc-stat-val">HTTP(S)</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Session</div><div class="pc-stat-val">Rotating</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Auth</div><div class="pc-stat-val">User/pass · Whitelist</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Best for</div><div class="pc-stat-val">Bulk scraping · Speed</div></div>
+        </div>
+      </div>
+
+      <!-- STATIC DATACENTER -->
+      <div class="proxy-card" id="static-dc">
+        <div class="proxy-card-left">
+          <div class="pc-header">
+            <div class="pc-icon">🔒</div>
+            <div>
+              <div class="pc-name">Static Datacenter</div>
+              <div class="pc-price-inline">$0.80 / IP/mo</div>
+            </div>
+          </div>
+          <p class="pc-desc">One dedicated server IP, yours for a full month. No rotation, no sharing. Billed per IP, not per GB — the right model when you need a persistent identity: whitelist registration, long-running bots, or any workflow where IP consistency is a hard requirement.</p>
+          <div class="pc-tags">
+            <span class="tag">Dedicated</span><span class="tag">Static</span><span class="tag">Whitelist-ready</span><span class="tag">HTTP(S)</span><span class="tag">Monthly</span>
+          </div>
+          <div class="pc-cta">
+            <a href="/pricing.html" class="btn btn-primary">Buy static DC →</a>
+          </div>
+        </div>
+        <div class="proxy-card-right">
+          <div class="pc-stat"><div class="pc-stat-label">Billing</div><div class="pc-stat-val">Per IP / month</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Starting at</div><div class="pc-stat-val">$0.80<em>/IP/mo</em></div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Rotation</div><div class="pc-stat-val">None — static</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Protocols</div><div class="pc-stat-val">HTTP(S)</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Auth</div><div class="pc-stat-val">User/pass · Whitelist</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Best for</div><div class="pc-stat-val">Bots · Whitelists</div></div>
+        </div>
+      </div>
+
+      <!-- STATIC ISP -->
+      <div class="proxy-card" id="static-isp">
+        <div class="proxy-card-left">
+          <div class="pc-header">
+            <div class="pc-icon">🏢</div>
+            <div>
+              <div class="pc-name">Static ISP</div>
+              <div class="pc-price-inline">$1.80 / IP/mo</div>
+            </div>
+          </div>
+          <p class="pc-desc">A residential provider IP — same trust level as the rotating residential pool — but with no rotation. The IP is yours for the month. When you need a persistent, high-trust identity for account management, seller dashboards, or platforms that flag IP changes, this is the call.</p>
+          <div class="pc-tags">
+            <span class="tag">ISP</span><span class="tag">Static</span><span class="tag">High trust</span><span class="tag">HTTP(S)</span><span class="tag">Monthly</span>
+          </div>
+          <div class="pc-cta">
+            <a href="/pricing.html" class="btn btn-primary">Buy static ISP →</a>
+          </div>
+        </div>
+        <div class="proxy-card-right">
+          <div class="pc-stat"><div class="pc-stat-label">Billing</div><div class="pc-stat-val">Per IP / month</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Starting at</div><div class="pc-stat-val">$1.80<em>/IP/mo</em></div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Trust level</div><div class="pc-stat-val">Residential</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Rotation</div><div class="pc-stat-val">None — static</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Auth</div><div class="pc-stat-val">User/pass · Whitelist</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Best for</div><div class="pc-stat-val">Accounts · Dashboards</div></div>
+        </div>
+      </div>
+
+      <!-- SCRAPING API -->
+      <div class="proxy-card" id="scraping-api">
+        <div class="proxy-card-left">
+          <div class="pc-header">
+            <div class="pc-icon">🕷️</div>
+            <div>
+              <div class="pc-name">Scraping API</div>
+              <div class="pc-price-inline">$1.40 / 1K requests</div>
+            </div>
+          </div>
+          <p class="pc-desc">Send a URL, get back clean HTML or structured JSON. JS rendering, CAPTCHA handling, and proxy rotation are all handled server-side. No headless browser to maintain, no proxy pool to manage. When the target is complex and you want results not infrastructure, this ends it.</p>
+          <div class="pc-tags">
+            <span class="tag">REST API</span><span class="tag">JS render</span><span class="tag">CAPTCHA</span><span class="tag">JSON output</span><span class="tag">Managed</span>
+          </div>
+          <div class="pc-cta">
+            <a href="/pricing.html" class="btn btn-primary">Buy API credits →</a>
+          </div>
+        </div>
+        <div class="proxy-card-right">
+          <div class="pc-stat"><div class="pc-stat-label">Billing</div><div class="pc-stat-val">Per 1,000 requests</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Starting at</div><div class="pc-stat-val">$1.40<em>/1K req</em></div></div>
+          <div class="pc-stat"><div class="pc-stat-label">JS rendering</div><div class="pc-stat-val">Included</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">CAPTCHA</div><div class="pc-stat-val">Auto-handled</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Output</div><div class="pc-stat-val">HTML or JSON</div></div>
+          <div class="pc-stat"><div class="pc-stat-label">Best for</div><div class="pc-stat-val">Managed scraping</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE TABLE -->
+<section id="compare" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-label">Quick compare</div>
+    <h2 class="sec-title">All types at a glance</h2>
+    <p class="sec-sub">One balance. All six types. Pick by use case — switch any time.</p>
+    <div class="compare-wrap">
+      <table class="ctable">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Price from</th>
+            <th>Billing</th>
+            <th>Rotation</th>
+            <th>SOCKS5</th>
+            <th>Best for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#residential" style="color:var(--accent)">Residential</a></td>
+            <td><span class="price">$0.49/GB</span></td>
+            <td>Per traffic</td>
+            <td>Rotate / sticky</td>
+            <td><span class="check">✓</span></td>
+            <td>Scraping, SEO, social</td>
+          </tr>
+          <tr>
+            <td><a href="#mobile" style="color:var(--accent)">Mobile 4G/5G</a></td>
+            <td><span class="price">$1.20/GB</span></td>
+            <td>Per traffic</td>
+            <td>Rotating</td>
+            <td><span class="check">✓</span></td>
+            <td>Social accounts, arbitrage</td>
+          </tr>
+          <tr>
+            <td><a href="#datacenter" style="color:var(--accent)">Datacenter</a></td>
+            <td><span class="price">$0.39/GB</span></td>
+            <td>Per traffic</td>
+            <td>Rotating</td>
+            <td><span class="dash">—</span></td>
+            <td>Bulk scraping, speed</td>
+          </tr>
+          <tr>
+            <td><a href="#static-dc" style="color:var(--accent)">Static Datacenter</a></td>
+            <td><span class="price">$0.80/IP/mo</span></td>
+            <td>Per IP/month</td>
+            <td>None</td>
+            <td><span class="dash">—</span></td>
+            <td>Bots, whitelists</td>
+          </tr>
+          <tr>
+            <td><a href="#static-isp" style="color:var(--accent)">Static ISP</a></td>
+            <td><span class="price">$1.80/IP/mo</span></td>
+            <td>Per IP/month</td>
+            <td>None</td>
+            <td><span class="dash">—</span></td>
+            <td>Accounts, dashboards</td>
+          </tr>
+          <tr>
+            <td><a href="#scraping-api" style="color:var(--accent)">Scraping API</a></td>
+            <td><span class="price">$1.40/1K req</span></td>
+            <td>Per request</td>
+            <td>Managed</td>
+            <td><span class="dash">—</span></td>
+            <td>Managed scraping</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-block">
+      <h2>One balance. Six networks. Start for $5.</h2>
+      <p>No subscription. No monthly commitment. Load balance, use it across any proxy type, top up when it runs low.</p>
+      <div class="cta-actions">
+        <a href="/pricing.html" class="btn btn-primary btn-lg">Get started</a>
+        <a href="/use-cases.html" class="btn btn-outline btn-lg">See use cases</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="/index.html" class="logo"><svg width="28" height="28" aria-hidden="true"><use href="#ps-logo"/></svg>PacketShift</a>
+        <p>Residential, mobile and datacenter proxies. 150+ countries. Pay per GB.</p>
+      </div>
+      <div class="foot-col"><h4>Proxies</h4><ul><li><a href="/proxies.html#residential">Residential</a></li><li><a href="/proxies.html#mobile">Mobile 4G/5G</a></li><li><a href="/proxies.html#datacenter">Datacenter</a></li><li><a href="/proxies.html#static-isp">Static ISP</a></li><li><a href="/proxies.html#scraping-api">Scraping API</a></li></ul></div>
+      <div class="foot-col"><h4>Use cases</h4><ul><li><a href="/use-cases.html">Web scraping</a></li><li><a href="/use-cases.html">Social media</a></li><li><a href="/use-cases.html">SEO monitoring</a></li><li><a href="/use-cases.html">Price tracking</a></li><li><a href="/use-cases.html">Multi-accounting</a></li></ul></div>
+      <div class="foot-col"><h4>Company</h4><ul><li><a href="/pricing.html">Pricing</a></li><li><a href="#">Terms of service</a></li><li><a href="#">Privacy policy</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2026 PacketShift. All rights reserved.</p>
+      <div class="pay-row"><span class="pay-pill">Visa</span><span class="pay-pill">Mastercard</span><span class="pay-pill">BTC</span><span class="pay-pill">ETH</span><span class="pay-pill">USDT</span></div>
+    </div>
+  </div>
+</footer>
+<script>function toggleMenu(){document.getElementById('mm').classList.toggle('open')}</script>
+</body>
+</html>
